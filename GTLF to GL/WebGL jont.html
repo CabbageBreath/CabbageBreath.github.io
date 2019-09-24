@@ -18,7 +18,7 @@
       function init() {
         //Renderer
         renderer = new THREE.WebGLRenderer( {antialias:true} );
-        renderer.setSize( window.innerWidth-500, window.innerHeight-500 );
+        renderer.setSize( window.innerWidth, window.innerHeight );
         document.body.appendChild( renderer.domElement );
         
         
@@ -67,8 +67,9 @@
           scene.add(gltf.scene);
           
         });
-       animate();
+      
       }
+       animate();
       function animate() {
         renderer.render(scene,camera);
         requestAnimationFrame(animate);
