@@ -10,27 +10,19 @@
     <script src="js/OrbitControls.js"></script>
     <script>
       let scene, camera, renderer;
-
       function init() {
-
         scene = new THREE.Scene();
         scene.background = new THREE.Color(0xdddddd);
-
         camera = new THREE.PerspectiveCamera(40,window.innerWidth/window.innerHeight,1,5000);
         camera.rotation.y = 45/180*Math.PI;
         camera.position.x = 10;
         camera.position.y = 10;
         camera.position.z = 10;
-
         controls = new THREE.OrbitControls(camera);
         //controls.addEventListener('change', renderer);  this causes errors 
-
-        
-        
         /*
         hlight = new THREE.AmbientLight (0x404040,100);
         scene.add(hlight);
-
         
         directionalLight = new THREE.DirectionalLight(0xffffff,100);
         directionalLight.position.set(0,1,0);
@@ -49,10 +41,10 @@
         light4.position.set(-500,300,500);
         scene.add(light4);
         */
-
         renderer = new THREE.WebGLRenderer({antialias:true});
         renderer.setSize(window.innerWidth,window.innerHeight);
         document.body.appendChild(renderer.domElement);
+
 
         let loader = new THREE.GLTFLoader();
         loader.load('Pendulum Color glTF.glb', function(gltf){
