@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>GLTF Loader Doc</title>
     <meta charset=UTF-8 />
     <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
@@ -9,18 +10,34 @@
     <script src="js/GLTFLoader.js"></script>
     <script src="js/OrbitControls.js"></script>
     <script>
-      let scene, camera, renderer;
+      var scene, camera, renderer;
+      var loader;
+      
+      init();
+      
       function init() {
+        //Renderer
+        renderer = new THREE.WebGLRenderer( {antialias:true} );
+        renderer.setSize( window.innerWidth-500, window.innerHeight-500 );
+        document.body.appendChild( renderer.domElement );
+        
+        
+        //Scene
         scene = new THREE.Scene();
         scene.background = new THREE.Color(0xdddddd);
+        
+        //Camera
         camera = new THREE.PerspectiveCamera(40,window.innerWidth/window.innerHeight,1,5000);
         camera.rotation.y = 45/180*Math.PI;
-        camera.position.x = 10;
-        camera.position.y = 10;
-        camera.position.z = 10;
-        controls = new THREE.OrbitControls(camera);
-        //controls.addEventListener('change', renderer);  this causes errors 
+        camera.position.set( 10, 10, 10 );
+        camera.lookAt( 0, 0, 5 );
         
+        //Controls
+        controls = new THREE.OrbitControls(camera);
+        //controls.addEventListener('change', renderer); // this causes errors 
+        
+        
+        //Lights
         hlight = new THREE.AmbientLight (0x404040,100);
         scene.add(hlight);
         /*
@@ -41,22 +58,22 @@
         light4.position.set(-500,300,500);
         scene.add(light4);
         */
-        renderer = new THREE.WebGLRenderer({antialias:true});
-        renderer.setSize(window.innerWidth,window.innerHeight);
-        document.body.appendChild(renderer.domElement);
 
+        
+       //Load GlTF File
 
-        let loader = new THREE.GLTFLoader();
+       loader = new THREE.GLTFLoader();
         loader.load('Pendulum Color glTF.glb', function(gltf){
           scene.add(gltf.scene);
-          animate();
+          
         });
+       animate();
       }
       function animate() {
         renderer.render(scene,camera);
         requestAnimationFrame(animate);
       }
-      init();
+      
     </script>
   </body>
 </html>
