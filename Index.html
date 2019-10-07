@@ -6,18 +6,27 @@
  </head> 
  <body>
   <hr> This website is show 3D models generated in FreeCad and exported in WebGL filetype. Special Thanks to Michel. gitlab.com/mi_shell 
+  
+  <hr>Direct Export from FreeCAD to WebGL:
   <ul> 
-  	<li><a href="WebGL Pendulum.html">Pendulum Clay Crusher Export from FreeCAD. </a> Doesn't work anymore due to issue with latest three.min.js</li> 
    <li><a href="WebGL Pendulum Orbit.html">Pendulum Clay Crusher With Orbit Controls</a></li>
-   <li><a href="GTLF to GL/WebGL jont.html">Attempt at loading a glTF file from external source.</a> THREE.js will build the scene from a 3d model you provide</li>
-   <li><a href="Stroke Limiter/Stroke Limiter.html">Stroke Limiter for CEB Press.</a> Same html file as glTF loader above. Colors and appearance messed up</li>
-   <li><a href="Stroke Limiter/Stroke Limiter X3D.html">X3D Export from Blender.</a> attempt at using an X3D File - doesn't work. Possible export error.</li>
-   <li><a href="Stroke Limiter/OBJ Loader/Stroke Limiter OBJ Loader.html">OBJ Export from Blender.</a> OBJ Loader Attempt. Edited from this example: <a href="https://threejs.org/examples/#webgl_loader_obj">Three.js wiki</a>.</li>
-   <li><a href="Stroke Limiter/OBJ2Loader/OBJ2Loader.html">OBJ2 Loader. OBJ Export from FreeCAD.</a> OBJ Loader Attempt. Includes mtl loader. Edited from this example: <a href="https://threejs.org/examples/models/obj/female02/female02.obj">Three.js wiki</a>.</li>
-   <li><a href="Stroke Limiter/OBJLoader2/Index.html">OBJ Loader Attempt 2. OBJ Export from FreeCAD.</a> OBJ Loader Attempt 2.  Includes mtl loader. Edited from this example: <a href="https://github.com/learnthreejs/three-js-boilerplate/tree/example-obj-loader-finish/public/examples/3d-obj-loader">LearnThreejs github</a>.</li>
    <li><a href="Stroke Limiter FreeCAD WebGL.html">WebGL Export Directly from FreeCAD.</a>Orbit controls and background added. linewidth and antialias modified </li>
- 
   </ul> 
+  
+ <hr>Object Loader Attempts:
+ <ul>
+     <li><a href="GTLF to GL/WebGL jont.html">Attempt at loading a glTF file from external source.</a> THREE.js will build the scene from a 3d model you provide</li>
+     <li><a href="Stroke Limiter/Stroke Limiter.html">Stroke Limiter for CEB Press.</a> Same html file as glTF loader above. Colors and appearance messed up</li>
+     <li><a href="Stroke Limiter/OBJ Loader/Stroke Limiter OBJ Loader.html">OBJ Export from Blender.</a> OBJ Loader Attempt. Edited from this example: <a href="https://threejs.org/examples/#webgl_loader_obj">Three.js wiki</a>.</li>
+     <li><a href="Stroke Limiter/OBJ2Loader/OBJ2Loader.html">OBJ2 Loader. OBJ Export from FreeCAD.</a> OBJ Loader Attempt. Includes mtl loader. Edited from this example: <a href="https://threejs.org/examples/models/obj/female02/female02.obj">Three.js wiki</a>.</li>
+     <li><a href="Stroke Limiter/OBJLoader2/Index.html">OBJ Loader Attempt 2. OBJ Export from FreeCAD.</a> OBJ Loader Attempt 2.  Includes mtl loader. Edited from this example: <a href="https://github.com/learnthreejs/three-js-boilerplate/tree/example-obj-loader-finish/public/examples/3d-obj-loader">LearnThreejs github</a>.</li>
+ </ul>
+  
+ <hr>Failed Attempts:
+ <ul>
+    	<li><a href="WebGL Pendulum.html">Pendulum Clay Crusher Export from FreeCAD. </a> Doesn't work anymore due to issue with latest three.min.js You need to use r50 of three.js for a direct export from FreeCad to work. It's an issue with trackball controls.</li> 
+     <li><a href="Stroke Limiter/Stroke Limiter X3D.html">X3D Export from Blender.</a> attempt at using an X3D File - doesn't work. Possible export error.</li>
+ </ul>
 </body> 
 </html>
 
