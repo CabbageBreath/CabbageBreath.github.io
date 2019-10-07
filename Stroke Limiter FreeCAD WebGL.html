@@ -18,7 +18,7 @@
                 document.body.appendChild( renderer.domElement );
         
                 scene = new THREE.Scene();
-                scene.background = new THREE.Color(0x00dddd);
+                scene.background = new THREE.Color(0x000000);
                 camera = new THREE.PerspectiveCamera(
                     VIEW_ANGLE,      // Field of view
                     ASPECT,          // Aspect ratio
@@ -31,7 +31,9 @@
                 
                 controls = new THREE.OrbitControls( camera );
                 
-        
+                let helper = new THREE.GridHelper( 1200, 60, 0xFF4444, 0x404040 );
+                    this.scene.add( helper );
+                
                 var geom = new THREE.Geometry();
                 var v0 = new THREE.Vector3(-8.95426034551027,-47.422028864914886,64.77000000000001);
                 var v1 = new THREE.Vector3(-8.734595093326021,-50.04344960687306,69.85000000000002);
